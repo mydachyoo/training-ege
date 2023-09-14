@@ -1,0 +1,252 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="../theory/css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Задания №13 - практика</h2> 
+            </header>
+            <section>
+                <h3>14.1</h3>
+                <p>В электронную таблицу занесли данные о тестировании учеников. Ниже приведены первые пять строк таблицы:</p>
+                <img src="../img/table1.png" alt="">
+                <p>В столбце А записан округ, в котором учится ученик; в столбце В  — фамилия; в столбце С  — любимый предмет; в столбце D  — тестовый балл. Всего в электронную таблицу были занесены данные по 1000 ученикам.</p>
+                <p>Откройте файл с данной электронной таблицей (расположение файла Вам сообщат организаторы экзамена). На основании данных, содержащихся в этой таблице, ответьте на два вопроса.</p>
+                <ul>
+                    <li>1.  Сколько учеников в Центральном округе (Ц) выбрали в качестве любимого предмета английский язык? Ответ на этот вопрос запишите в ячейку Н2 таблицы.</li>
+                    <li>2.  Каков средний тестовый балл у учеников Восточного округа (В)? Ответ на этот вопрос запишите в ячейку Н3 таблицы с точностью не менее двух знаков после запятой.</li>
+                    <li><b style="color: red">3.</b>  Постройте круговую диаграмму, отображающую соотношение числа участников из округов с кодами «C», «Ю» и «З». Левый верхний угол диаграммы разместите вблизи ячейки G6.</li>
+                </ul>
+                <a href="../archivezip/task11.xls" style="color: black; text-decoration: underline;">task11.xls</a>
+                <p>Ответ-1: <input type="text" id="answer-1" style="margin-left: 5px;"> <button id="btn1" onclick="checkitout1();">Проверить</button></p>
+                <p class="answer1"></p>
+                <p>Ответ-2: <input type="text" id="answer-2" style="margin-left: 5px;"> <button id="btn2" onclick="checkitout2();">Проверить</button></p>
+                <p class="answer2"></p>
+
+                <!-- 1) 20; 2) 500,09. -->
+            </section>
+            <section>
+                <h3>14.2</h3>
+                <p>В электронную таблицу занесли данные о тестировании учеников. Ниже приведены первые пять строк таблицы:</p>
+                <img src="../img/table123.png" alt="">
+                <p>В столбце А записан округ, в котором учится ученик; в столбце В  — фамилия; в столбце С  — любимый предмет; в столбце D  — тестовый балл. Всего в электронную таблицу были занесены данные по 1000 ученикам.</p>
+                <p>Откройте файл с данной электронной таблицей (расположение файла Вам сообщат организаторы экзамена). На основании данных, содержащихся в этой таблице, ответьте на два вопроса.</p>
+                <ul>
+                    <li>
+                        1. Сколько учеников в Южном округе (Ю) выбрали в качестве любимого предмета английский язык? Ответ на этот вопрос запишите в ячейку Н2 таблицы.
+                    </li>
+                    <li>2. Каков средний тестовый балл у учеников Юго-Восточного округа (ЮВ)? Ответ на этот вопрос запишите в ячейку Н3 таблицы с точностью не менее двух знаков после запятой.</li>
+                    <li><b style="color: red;">3. </b> Постройте круговую диаграмму, отображающую соотношение числа участников из округов с кодами «CВ», «ЮВ» и «З». Левый верхний угол диаграммы разместите вблизи ячейки G6.</li>
+                </ul>
+                <p>Ответ-1: <input type="text" id="answer-3" style="margin-left: 5px;"> <button id="btn3" onclick="checkitout3();">Проверить</button></p>
+                <p class="answer3"></p>
+                <p>Ответ-2: <input type="text" id="answer-4" style="margin-left: 5px;"> <button id="btn4" onclick="checkitout4();">Проверить</button></p>
+                <p class="answer4"></p>
+                <!-- 1) 12; 2) 516,30. -->
+                <br>
+                <hr>
+            </section>
+            <div class="btn-send">
+                <a href="../theory/15.html"><span>Задание 15: теория &#8594;</span></a>
+            </div>
+            <br>
+            <br>
+            <script>
+                let ans1 = document.getElementById('answer-1');
+                function checkitout1() {
+                    let ans1 = document.getElementById('answer-1').value;
+                    if (ans1 == '20') {
+                        let answer1 = document.getElementsByClassName('answer1')[0];
+                        document.getElementsByClassName('answer1')[0].textContent = 'Верно! ☑';
+                        answer1.style.cssText = `color: #0f4522;
+                        border: 2px solid #31eb72;
+                        border-radius: 100px;
+                        background-color: #31eb72;
+                        padding: 10px;
+                        width: 120px;
+                        `;
+                    } else {
+                        let answer1 = document.getElementsByClassName('answer1')[0];
+                        document.getElementsByClassName('answer1')[0].textContent = 'Неверно! ☓'
+                        answer1.style.cssText = `color: #52161b;
+                        border: 2px solid #fa6966;
+                        border-radius: 100px;
+                        background-color: #fa6966;
+                        padding: 10px;
+                        width: 120px;
+                        `;
+                    }
+            }
+            ans1.addEventListener("keyup", function(event) {
+                    // Число 13 в "Enter" и клавиши на клавиатуре
+                        if (event.keyCode === 13) {
+                    // При необходимости отмените действие по умолчанию
+                            event.preventDefault();
+                    // Вызов элемента button одним щелчком мыши
+                            document.getElementById("btn1").click();
+                    }
+                });
+                // ===================================================================================================
+                let ans2 = document.getElementById('answer-2');
+                function checkitout2() {
+                    let ans2 = document.getElementById('answer-2').value;
+                    if (ans2 == '500,09' || ans2 == "500.09") {
+                        let answer2 = document.getElementsByClassName('answer2')[0];
+                        document.getElementsByClassName('answer2')[0].textContent = 'Верно! ☑';
+                        answer2.style.cssText = `color: #0f4522;
+                        border: 2px solid #31eb72;
+                        border-radius: 100px;
+                        background-color: #31eb72;
+                        padding: 10px;
+                        width: 120px;
+                        `;
+                    } else {
+                        let answer2 = document.getElementsByClassName('answer2')[0];
+                        document.getElementsByClassName('answer2')[0].textContent = 'Неверно! ☓'
+                        answer2.style.cssText = `color: #52161b;
+                        border: 2px solid #fa6966;
+                        border-radius: 100px;
+                        background-color: #fa6966;
+                        padding: 10px;
+                        width: 120px;
+                        `;
+                    }
+            }
+            ans2.addEventListener("keyup", function(event) {
+                    // Число 13 в "Enter" и клавиши на клавиатуре
+                        if (event.keyCode === 13) {
+                    // При необходимости отмените действие по умолчанию
+                            event.preventDefault();
+                    // Вызов элемента button одним щелчком мыши
+                            document.getElementById("btn2").click();
+                    }
+                });
+        // =========================================================================================================
+                let ans3 = document.getElementById('answer-3');
+                function checkitout3() {
+                    let ans1 = document.getElementById('answer-3').value;
+                    if (ans1 == '12') {
+                        let answer3 = document.getElementsByClassName('answer3')[0];
+                        document.getElementsByClassName('answer3')[0].textContent = 'Верно! ☑';
+                        answer3.style.cssText = `color: #0f4522;
+                        border: 2px solid #31eb72;
+                        border-radius: 100px;
+                        background-color: #31eb72;
+                        padding: 10px;
+                        width: 120px;
+                        `;
+                    } else {
+                        let answer3 = document.getElementsByClassName('answer3')[0];
+                        document.getElementsByClassName('answer3')[0].textContent = 'Неверно! ☓'
+                        answer3.style.cssText = `color: #52161b;
+                        border: 2px solid #fa6966;
+                        border-radius: 100px;
+                        background-color: #fa6966;
+                        padding: 10px;
+                        width: 120px;
+                        `;
+                    }
+            }
+            ans3.addEventListener("keyup", function(event) {
+                    // Число 13 в "Enter" и клавиши на клавиатуре
+                        if (event.keyCode === 13) {
+                    // При необходимости отмените действие по умолчанию
+                            event.preventDefault();
+                    // Вызов элемента button одним щелчком мыши
+                            document.getElementById("btn3").click();
+                    }
+                });
+                // =========================================================================================================
+                let ans4 = document.getElementById('answer-4');
+                function checkitout4() {
+                    let ans1 = document.getElementById('answer-4').value;
+                    if (ans1 == '516,30' || ans1 == '516.30') {
+                        let answer4 = document.getElementsByClassName('answer4')[0];
+                        document.getElementsByClassName('answer4')[0].textContent = 'Верно! ☑';
+                        answer4.style.cssText = `color: #0f4522;
+                        border: 2px solid #31eb72;
+                        border-radius: 100px;
+                        background-color: #31eb72;  
+                        padding: 10px;
+                        width: 120px;
+                        `;
+                    } else {
+                        let answer4 = document.getElementsByClassName('answer4')[0];
+                        document.getElementsByClassName('answer4')[0].textContent = 'Неверно! ☓'
+                        answer4.style.cssText = `color: #52161b;
+                        border: 2px solid #fa6966;
+                        border-radius: 100px;
+                        background-color: #fa6966;
+                        padding: 10px;
+                        width: 120px;
+                        `;
+                    }
+            }
+            ans4.addEventListener("keyup", function(event) {
+                    // Число 13 в "Enter" и клавиши на клавиатуре
+                        if (event.keyCode === 13) {
+                    // При необходимости отмените действие по умолчанию
+                            event.preventDefault();
+                    // Вызов элемента button одним щелчком мыши
+                            document.getElementById("btn4").click();
+                    }
+                });
+            </script>
+        </article>
+    </main>
+</body>
+
+</html>

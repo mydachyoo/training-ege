@@ -1,0 +1,396 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="../theory/css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    
+
+    
+    <![endif]-->
+
+
+        <!-- Подключени подсветки кода -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <!-- Светлая тема -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Задания №6 - практика</h2> 
+            </header>
+            <section>
+                <section>
+                    <h3>6.1</h3>
+                    <p>Ниже приведена программа, записанная на нескольких языках программирования:</p>
+                    <div class="big-table">
+                    <table>
+                        <tr>
+                            <td>Pascal</td>
+                            <td>Python</td>
+                            <td>C++</td>
+                        </tr>
+                        <tr>
+                            <td class="codesix">
+                                <pre>
+                                    <code>
+var s, k: integer; 
+begin 
+    readln(s);
+    readln(k);
+    if (s > 5) or (k > 5)
+        then writeln ('ДА')
+        else writeln ('НЕТ')
+end.
+                                    </code>
+                                </pre>
+                            </td>
+                            <td class="codesix">
+                                <pre>
+                                    <code>
+s = int(input())
+k = int(input())
+if  s > 5 or k > 5:
+    print("ДА")
+else:
+    print("НЕТ")
+                                    </code>
+                                </pre>
+                            </td>
+                            <td class="codesix">
+                                <pre>
+                                    <code>
+#include <iostream>
+using namespace std;
+int main() {
+    int s, k;
+    cin >> s;
+    cin >> k;
+    if (s > 5 || k > 5)
+        cout << "ДА";
+    else 
+        cout << "НЕТ";
+    return 0;
+}
+                                    </code>
+                                </pre>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    <br>
+                    <p>Было проведено 9 запусков программы, при которых в качестве значений переменных s и k вводились следующие пары чисел:</p>
+                    <q style="quotes: none;">(2, 2); (5, 9); (7, −12); (5, 5); (2, 12); (—10, —13); (—11, 11); (1, 4); (2, 6)</q>
+                    <p>Сколько было запусков, при которых программа напечатала <b>"ДА"?</b></p>
+                </section>
+                <p>Ответ: <input type="text" id="answer-1" style="margin-left: 5px;"> <button id="btn1" onclick="checkitout1();">Проверить</button></p>
+                <p class="answer1"></p>
+                <!-- 5 -->
+            </section>
+            <section>
+                <h3>6.2</h3>
+                <p>Ниже приведена программа, записанная на нескольких языках программирования:</p>
+                <div class="big-table">
+                <table>
+                    <tr>
+                        <td>Pascal</td>
+                        <td>Python</td>
+                        <td>C++</td>
+                    </tr>
+                    <tr>
+                        <td class="codesix">
+                            <pre>
+                                <code>
+var s, k: integer; 
+begin 
+readln(s);
+readln(k);
+if s >= 2 * k
+    then writeln ('ДА')
+    else writeln ('НЕТ')
+end.
+                                </code>
+                            </pre>
+                        </td>
+                        <td class="codesix">
+                            <pre>
+                                <code>
+s = int(input())
+k = int(input())
+if  s >= 2 * k:
+    print("ДА")
+else:
+    print("НЕТ")
+                                </code>
+                            </pre>
+                        </td>
+                        <td class="codesix">
+                            <pre>
+                                <code>
+#include <iostream>
+using namespace std;
+int main() {
+    int s, k;
+    cin >> s;
+    cin >> k;
+    if (s >= 2 * k)
+        cout << "ДА";
+    else 
+        cout << "НЕТ";
+    return 0;
+}
+                                </code>
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <br>
+                <p>Было проведено 9 запусков программы, при которых в качестве значений переменных s и k вводились следующие пары чисел:</p>
+                <q style="quotes: none;">(1, 2); (8, 4); (6, −12); (−5, −5); (3, 11); (—10, 12); (—10, −2); (4, 1); (2, 5)</q>
+                <p>Сколько было запусков, при которых программа напечатала <b>"ДА"?</b></p>
+            </section>
+                <p>Ответ: <input type="text" id="answer-2" style="margin-left: 5px;"> <button id="btn2" onclick="checkitout2();">Проверить</button></p>
+                <p class="answer2"></p>
+                <!-- 4 -->
+            </section>
+            <section>
+                <section>
+                    <h3>6.3</h3>
+                    <p>Ниже приведена программа, записанная на нескольких языках программирования:</p>
+                    <div class="big-table">
+                    <table>
+                        <tr>
+                            <td>Pascal</td>
+                            <td>Python</td>
+                            <td>C++</td>
+                        </tr>
+                        <tr>
+                            <td class="codesix">
+                                <pre>
+                                    <code>
+var s, k: integer; 
+begin 
+readln(s);
+readln(k);
+if s <= 2 * k
+    then writeln ('ДА')
+    else writeln ('НЕТ')
+end.
+                                    </code>
+                                </pre>
+                            </td>
+                            <td class="codesix">
+                                <pre>
+                                    <code>
+s = int(input())
+k = int(input())
+if  s <= 2 * k:
+    print("ДА")
+else:
+    print("НЕТ")
+                                    </code>
+                                </pre>
+                            </td>
+                            <td class="codesix">
+                                <pre>
+                                    <code>
+#include <iostream>
+using namespace std;
+int main() {
+    int s, k;
+    cin >> s;
+    cin >> k;
+    if (s < = 2 * k)
+        cout << "ДА";
+    else
+        cout << "НЕТ";
+    return 0;
+}
+                                    </code>
+                                </pre>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    <br>
+                    <p>Было проведено 9 запусков программы, при которых в качестве значений переменных s и k вводились следующие пары чисел:</p>
+                    <q style="quotes: none;">(1, 2); (8, 4); (6, −12); (−5, −5); (3, 11); (−10, 12); (−10, −2); (4, 1); (2, 5)</q>
+                    <p>Сколько было запусков, при которых программа напечатала <b>"ДА"?</b></p>
+                </section>
+                <p>Ответ: <input type="text" id="answer-3" style="margin-left: 5px;"> <button id="btn3" onclick="checkitout3();">Проверить</button></p>
+                <p class="answer3"></p>
+                <!-- 6 -->
+            </section>
+            <div class="btn-send">
+                <a href="../theory/7.html"><span>Задание 7: теория &#8594;</span></a>
+            </div>
+            <br>
+            <br>
+        </article>
+    </main>
+    <script>
+        let ans1 = document.getElementById('answer-1');
+        function checkitout1() {
+            let ans1 = document.getElementById('answer-1').value;
+            if (ans1 == '5') {
+                let answer1 = document.getElementsByClassName('answer1')[0];
+                document.getElementsByClassName('answer1')[0].textContent = 'Верно! ☑';
+                answer1.style.cssText = `color: #0f4522;
+                border: 2px solid #31eb72;
+                border-radius: 100px;
+                background-color: #31eb72;
+                padding: 10px;
+                width: 120px;
+                `;
+            } else {
+                let answer1 = document.getElementsByClassName('answer1')[0];
+                document.getElementsByClassName('answer1')[0].textContent = 'Неверно! ☓'
+                answer1.style.cssText = `color: #52161b;
+                border: 2px solid #fa6966;
+                border-radius: 100px;
+                background-color: #fa6966;
+                padding: 10px;
+                width: 120px;
+                `;
+            }
+    }
+    ans1.addEventListener("keyup", function(event) {
+            // Число 13 в "Enter" и клавиши на клавиатуре
+                if (event.keyCode === 13) {
+            // При необходимости отмените действие по умолчанию
+                    event.preventDefault();
+            // Вызов элемента button одним щелчком мыши
+                    document.getElementById("btn1").click();
+            }
+        });
+        // ===================================================================================================
+        let ans2 = document.getElementById('answer-2');
+        function checkitout2() {
+            let ans2 = document.getElementById('answer-2').value;
+            if (ans2 == '4') {
+                let answer2 = document.getElementsByClassName('answer2')[0];
+                document.getElementsByClassName('answer2')[0].textContent = 'Верно! ☑';
+                answer2.style.cssText = `color: #0f4522;
+                border: 2px solid #31eb72;
+                border-radius: 100px;
+                background-color: #31eb72;
+                padding: 10px;
+                width: 120px;
+                `;
+            } else {
+                let answer2 = document.getElementsByClassName('answer2')[0];
+                document.getElementsByClassName('answer2')[0].textContent = 'Неверно! ☓'
+                answer2.style.cssText = `color: #52161b;
+                border: 2px solid #fa6966;
+                border-radius: 100px;
+                background-color: #fa6966;
+                padding: 10px;
+                width: 120px;
+                `;
+            }
+    }
+    ans2.addEventListener("keyup", function(event) {
+            // Число 13 в "Enter" и клавиши на клавиатуре
+                if (event.keyCode === 13) {
+            // При необходимости отмените действие по умолчанию
+                    event.preventDefault();
+            // Вызов элемента button одним щелчком мыши
+                    document.getElementById("btn2").click();
+            }
+        });
+// =========================================================================================================
+        let ans3 = document.getElementById('answer-3');
+        function checkitout3() {
+            let ans1 = document.getElementById('answer-3').value;
+            if (ans1 == '6') {
+                let answer3 = document.getElementsByClassName('answer3')[0];
+                document.getElementsByClassName('answer3')[0].textContent = 'Верно! ☑';
+                answer3.style.cssText = `color: #0f4522;
+                border: 2px solid #31eb72;
+                border-radius: 100px;
+                background-color: #31eb72;
+                padding: 10px;
+                width: 120px;
+                `;
+            } else {
+                let answer3 = document.getElementsByClassName('answer3')[0];
+                document.getElementsByClassName('answer3')[0].textContent = 'Неверно! ☓'
+                answer3.style.cssText = `color: #52161b;
+                border: 2px solid #fa6966;
+                border-radius: 100px;
+                background-color: #fa6966;
+                padding: 10px;
+                width: 120px;
+                `;
+            }
+    }
+    ans3.addEventListener("keyup", function(event) {
+            // Число 13 в "Enter" и клавиши на клавиатуре
+                if (event.keyCode === 13) {
+            // При необходимости отмените действие по умолчанию
+                    event.preventDefault();
+            // Вызов элемента button одним щелчком мыши
+                    document.getElementById("btn3").click();
+            }
+        });
+        // =========================================================================================================
+    </script>
+</body>
+
+</html>

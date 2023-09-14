@@ -1,0 +1,217 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="../theory/css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Задания №5 - практика</h2> 
+            </header>
+            <section>
+                <h3>5.1</h3>
+                <p>У исполнителя Альфа две команды, которым присвоены номера:</p>
+                <q style="quotes: none; text-align: left;">
+                    <p><b>1. прибавь 5;</b></p>
+                    <p><b>2. умножь на b</b></p>
+                </q>
+                <p>(b  — неизвестное натуральное число; b ≥ 2).</p>
+                <p>Выполняя первую из них, Альфа увеличивает число на экране на 5, а выполняя вторую, умножает это число на b. Программа для исполнителя Альфа  — это последовательность номеров команд. Известно, что программа 11211 переводит число 3 в число 88. <b>Определите значение b</b>.</p> 
+                <!-- 6 -->
+                <p>Ответ: <input type="text" id="answer-1" style="margin-left: 5px;"> <button id="btn1" onclick="checkitout1();">Проверить</button></p>
+                <p class="answer1"></p>
+            </section>
+            <section>
+                <h3>5.2</h3>
+                <p>У исполнителя Квадратор две команды. которым присвоены номера:</p>
+                <q style="quotes: none; text-align: left;">
+                    <p><b>1.  возведи в квадрат</b></p>
+                    <p><b>2.  прибавь 3</b></p>
+                </q>
+                <p>Первая из них возводит число на экране во вторую степень, вторая увеличивает его на 3.</p>
+                <p>Составьте алгоритм получения <b>из числа 1 числа 25</b>, содержащий не более 5 команд. В ответе запишите только номера команд.</p>
+                <!-- 21222 -->
+                <p>Ответ: <input type="text" id="answer-2" style="margin-left: 5px;"> <button id="btn2" onclick="checkitout2();">Проверить</button></p>
+                <p class="answer2"></p>
+            </section>
+            <section>
+                <h3>5.3</h3>
+                <p>У исполнителя Альфа две команды, которым присвоены номера:</p>
+                <q style="quotes: none; text-align: left">
+                    <p><b>1. прибавь 2;</b></p>
+                    <p><b>2. раздели на b</b></p>
+                </q>
+                <p>(b  — неизвестное натуральное число; b ≥ 2).</p>
+                <p>Выполняя первую из них, Альфа увеличивает число на экране на 2, а выполняя вторую, делит это число на b. Программа для исполнителя Альфа  — это последовательность номеров команд. Известно, что программа 12111 переводит число 47 в число 13. <b> Определите значение b</b>.</p>
+                <!-- 7 -->
+                <p>Ответ: <input type="text" id="answer-3" style="margin-left: 5px;"> <button id="btn3" onclick="checkitout3();">Проверить</button></p>
+                <p class="answer3"></p>
+            </section>
+            <div class="btn-send">
+                <a href="../theory/6.html"><span>Задание 6: теория &#8594;</span></a>
+            </div>
+            <br>
+            <br>
+        </article>
+    </main>
+    <script>
+        let ans1 = document.getElementById('answer-1');
+        function checkitout1() {
+            let ans1 = document.getElementById('answer-1').value;
+            if (ans1 == '6') {
+                let answer1 = document.getElementsByClassName('answer1')[0];
+                document.getElementsByClassName('answer1')[0].textContent = 'Верно! ☑';
+                answer1.style.cssText = `color: #0f4522;
+                border: 2px solid #31eb72;
+                border-radius: 100px;
+                background-color: #31eb72;
+                padding: 10px;
+                width: 120px;
+                `;
+            } else {
+                let answer1 = document.getElementsByClassName('answer1')[0];
+                document.getElementsByClassName('answer1')[0].textContent = 'Неверно! ☓'
+                answer1.style.cssText = `color: #52161b;
+                border: 2px solid #fa6966;
+                border-radius: 100px;
+                background-color: #fa6966;
+                padding: 10px;
+                width: 120px;
+                `;
+            }
+    }
+    ans1.addEventListener("keyup", function(event) {
+            // Число 13 в "Enter" и клавиши на клавиатуре
+                if (event.keyCode === 13) {
+            // При необходимости отмените действие по умолчанию
+                    event.preventDefault();
+            // Вызов элемента button одним щелчком мыши
+                    document.getElementById("btn1").click();
+            }
+        });
+        // ===================================================================================================
+        let ans2 = document.getElementById('answer-2');
+        function checkitout2() {
+            let ans2 = document.getElementById('answer-2').value;
+            if (ans2 == '21222') {
+                let answer2 = document.getElementsByClassName('answer2')[0];
+                document.getElementsByClassName('answer2')[0].textContent = 'Верно! ☑';
+                answer2.style.cssText = `color: #0f4522;
+                border: 2px solid #31eb72;
+                border-radius: 100px;
+                background-color: #31eb72;
+                padding: 10px;
+                width: 120px;
+                `;
+            } else {
+                let answer2 = document.getElementsByClassName('answer2')[0];
+                document.getElementsByClassName('answer2')[0].textContent = 'Неверно! ☓'
+                answer2.style.cssText = `color: #52161b;
+                border: 2px solid #fa6966;
+                border-radius: 100px;
+                background-color: #fa6966;
+                padding: 10px;
+                width: 120px;
+                `;
+            }
+    }
+    ans2.addEventListener("keyup", function(event) {
+            // Число 13 в "Enter" и клавиши на клавиатуре
+                if (event.keyCode === 13) {
+            // При необходимости отмените действие по умолчанию
+                    event.preventDefault();
+            // Вызов элемента button одним щелчком мыши
+                    document.getElementById("btn2").click();
+            }
+        });
+// =========================================================================================================
+        let ans3 = document.getElementById('answer-3');
+        function checkitout3() {
+            let ans1 = document.getElementById('answer-3').value;
+            if (ans1 == '7') {
+                let answer3 = document.getElementsByClassName('answer3')[0];
+                document.getElementsByClassName('answer3')[0].textContent = 'Верно! ☑';
+                answer3.style.cssText = `color: #0f4522;
+                border: 2px solid #31eb72;
+                border-radius: 100px;
+                background-color: #31eb72;
+                padding: 10px;
+                width: 120px;
+                `;
+            } else {
+                let answer3 = document.getElementsByClassName('answer3')[0];
+                document.getElementsByClassName('answer3')[0].textContent = 'Неверно! ☓'
+                answer3.style.cssText = `color: #52161b;
+                border: 2px solid #fa6966;
+                border-radius: 100px;
+                background-color: #fa6966;
+                padding: 10px;
+                width: 120px;
+                `;
+            }
+    }
+    ans3.addEventListener("keyup", function(event) {
+            // Число 13 в "Enter" и клавиши на клавиатуре
+                if (event.keyCode === 13) {
+            // При необходимости отмените действие по умолчанию
+                    event.preventDefault();
+            // Вызов элемента button одним щелчком мыши
+                    document.getElementById("btn3").click();
+            }
+        });
+        // =========================================================================================================
+    </script>
+</body>
+
+</html>
