@@ -1,0 +1,63 @@
+.options-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.options-group.one {
+    padding-top: 80px;
+}
+.options-group  a {
+    height: 45px;
+    line-height: 40px;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #333;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+    margin: 20px;
+    
+}
+
+
+.options-group a:hover {
+    color: black;
+}
+
+/*  Подчеркивание  */
+.options-group a {
+	position: relative;
+    color: #333; /*задаём цвет ссылки*/
+	cursor: pointer;
+	line-height: 1; /*задаём высоту строки*/
+	text-decoration: none; /*убираем подчёркивание*/
+
+}
+.options-group a:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 1px; /*задаём ширину линии*/
+	background-color: #333; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.options-group a:hover:after,
+.options-group a:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+@media screen and (max-width: 830px){
+    .options-group a {
+        font-size: 18px;
+        margin: 2%;
+    }
+    
+}

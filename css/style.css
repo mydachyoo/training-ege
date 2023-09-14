@@ -1,0 +1,225 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic);
+
+* {
+    box-sizing: border-box;
+}
+
+/**
+ * Максимальная высота базового контейнера
+ */
+html {
+    font-size: 100%;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    color: #333;
+    font: 1em 'Open Sans', sans-serif;
+    background-color: #f1f1f1;
+}
+
+
+/* изменяем полоcу прокрутки */
+
+::-webkit-scrollbar {
+    width: .65em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(217, 217, 217, 0.75);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(170, 170, 170, 0.6);
+    border-radius: 5px;
+    box-shadow: inset 0.05em 0.05em 0 rgba(0, 0, 0, 0.1), inset 0 -0.05em 0 rgba(0, 0, 0, 0.07);
+}
+
+main {
+    padding-top: 30px;
+    max-width: 1024px;
+    margin: 0 auto
+}
+
+article {
+    margin: 0 1em;
+    padding: 0 22px;
+    -webkit-transition: -webkit-transform .3s;
+    -moz-transition: -moz-transform .3s;
+    transition: transform .3s;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+p {
+    margin-bottom: 16px;
+}
+
+hr {
+    margin: 22px 0;
+    height: 1px;
+    border: 0;
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+h1,
+h2 {
+    margin-bottom: 22px;
+    color: #191919;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 32px;
+}
+
+h2 {
+    color: #565d66;
+    font-size: 26px;
+    line-height: 26px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Группа кнопок с переходом - Начало*/
+.btn-group {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -2%;
+}
+
+.btn-group a {
+    margin: 0 2%;
+}
+
+.btn-group  a {
+    width: 50%;
+    height: 45px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+.btn-group a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+.btn-group a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: black;
+    transition: all .35s;
+  }
+  
+.btn-group a:hover{
+    color: #fff;
+  }
+  
+.btn-group a:hover:after{
+    width: 100%;
+  }
+
+.interpretor {
+    width: 65%;
+    height: 70%;
+    float: left;
+    margin-right: 50px;
+    border: 1px solid gray;
+    border-radius: 50px;
+    opacity: 0.8;
+}
+
+
+.btn a {
+    width: 30%;
+    height: 45px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+    padding: 10px;
+}
+
+
+.btn a span{
+    position: relative;
+    z-index: 2;
+    border-radius: 100px;
+  }
+  
+.btn a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: black;
+    transition: all .35s;
+    border-radius: 100px;
+  }
+  
+.btn a:hover{
+    color: #fff;
+    border-radius: 100px;
+  }
+  
+.btn a:hover:after{
+    width: 100%;
+    border-radius: 100px;   
+  }
+/* Конец */
+
+/* Адаптация под мобилки */
+@media screen and (max-width: 830px) {
+.btn-group a {
+    height: 120px;
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+.nav-toggle {
+    padding: 0.1em;
+}
+
+}

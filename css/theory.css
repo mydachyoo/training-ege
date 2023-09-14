@@ -1,0 +1,74 @@
+.theory-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+
+}
+.theory-group  a {
+    height: 45px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #333;
+    letter-spacing: 1px;
+    text-align: left;
+    position: relative;
+    transition: all .35s;
+    
+}
+
+.theory-group a:hover {
+    color: black;
+}
+
+/*  Подчеркивание  */
+.theory-group a {
+	position: relative;
+    color: #333; /*задаём цвет ссылки*/
+	cursor: pointer;
+	line-height: 1; /*задаём высоту строки*/
+	text-decoration: none; /*убираем подчёркивание*/
+
+}
+.theory-group a:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 1px; /*задаём ширину линии*/
+	background-color: #333; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.theory-group a:hover:after,
+.theory-group a:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+.theory-group .notworktask {
+    line-height: 40px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #333;
+    letter-spacing: 1px;
+    text-align: left;
+    position: relative;
+    transition: all .35s;
+    margin-bottom: 20px;
+}
+
+/* Адаптация под мобилки */
+@media screen and (max-width: 830px) {
+    .theory-group a {
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+    .theory-group .notworktask {
+        letter-spacing: 0;
+    }
+    
+}
