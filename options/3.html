@@ -1,0 +1,390 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="../theory/css/example.css">
+    <script src="data/data.js"></script>
+        <!-- Подключени подсветки кода -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+        <!-- Светлая тема -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+    
+        <script>hljs.highlightAll();</script>
+    <style>
+        #btn {
+            float: right;
+
+            font-size: 18px;
+            font-family: 'Open Sans', sans-serif;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #333;
+            border-radius: 100px;
+            transition: all .35s;
+            padding: 15px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Вариант №3</h2> 
+            </header>
+            <div id="options-1">
+                <section>
+                    <h3>1</h3>
+                    <p>В кодировке Windows-1251 каждый символ кодируется 8 битами.
+                        Вова написал текст (в нём нет лишних пробелов):</p>
+                    <q>Мой дядя самых честных правил,
+                        Когда не в шутку занемог…</q>
+                    <p>Ученик вычеркнул из текста одно слово. Заодно он вычеркнул ставший лишним пробел – два пробела не должны идти подряд.</p>
+                    <p>При этом размер нового предложения в данной кодировке оказался на 5 байт меньше, чем размер исходного предложения.
+                        Напишите в ответе вычеркнутое слово(строчными буквами):</p> 
+                    <!-- дядя -->
+                    <p>Ответ: <input type="text" id="answer1" style="margin-left: 5px;"></p>
+                </section>
+                <br><hr>
+                <section>
+                    <h3>2</h3>
+                    <p>От разведчика была получена следующая шифрованная радиограмма, переданная с использованием азбуки Морзе:</p>
+                    <q style="quotes: none">• – – – • • – – • • • • • – – •</q>
+                    <p>При передаче радиограммы было потеряно разбиение на буквы, но известно, что в радиограмме использовались только следующие буквы: </p>
+                    <p>М – –</p>
+<p>Н – •</p>
+<p>С • • •</p>
+<p>У • • –</p>
+<p>А • –</p>
+<p>Определите текст радиограммы.
+    В ответе запишите получившееся слово (набор букв):</p>
+                    <!-- АМУНСАН -->
+                    <p>Ответ: <input type="text" id="answer2" style="margin-left: 5px;"></p>
+                </section>
+                <section>
+                    <br>
+                    <hr>
+                    <h3>3</h3>
+                    <p>Напишите наибольшее трёхзначное число x, для которого истинно высказывание:</p>
+                    <q style="quotes: none">НЕ (Первая цифра нечётная) И (x делится на 3)</q>
+                    <!-- 897 -->
+                    <p>Ответ: <input type="text" id="answer3" style="margin-left: 5px;"></p>
+                </section>
+                <section>
+                    <br>
+                    <hr>
+                    <h3>4</h3>
+                    <p>Между населёнными пунктами A, B, C, D, E построены дороги, протяжённость которых приведена в таблице:</p>
+                    <table style="width: 500px">
+                        <tr>
+                            <td style="background-color: #888;"></td>
+                            <td>A</td>
+                            <td>B</td>
+                            <td>C</td>
+                            <td>D</td>
+                            <td>E</td>
+                        </tr>
+                        <tr>
+                            <td>A</td>
+                            <td style="background-color: #888;"></td>
+                            <td>5</td>
+                            <td>9</td>
+                            <td>6</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>5</td>
+                            <td style="background-color: #888;"></td>
+                            <td style="background-color: #888;"></td>
+                            <td>3</td>
+                            <td style="background-color: #888;"></td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>9</td>
+                            <td style="background-color: #888;"></td>
+                            <td style="background-color: #888;"></td>
+                            <td>2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>6</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td style="background-color: #888;"></td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <td>9</td>
+                            <td style="background-color: #888;"></td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td style="background-color: #888;"></td>
+                        </tr>
+                    </table>
+                    <p>
+
+                        Определите длину кратчайшего пути между пунктами A и E, проходящего через пункт D. Передвигаться можно только по дорогам, указанным в таблице. Каждый пункт можно посетить только один раз:</p>
+                    <!-- 10 -->
+                    <p>Ответ: <input type="text" id="answer4" style="margin-left: 5px;"></p>
+                </section>
+                <br>
+                <hr>
+                <section>
+                    <h3>5</h3>
+                    <p>У исполнителя Делитель две команды, которым присвоены номера:</p>
+                    <ol>
+                        <li>раздели на 2</li>
+                        <li>прибавь 1</li>
+                    </ol>
+                    <p>Первая из них уменьшает число на экране в 2 раза, вторая увеличивает его на 1.</p>
+                    <p>Исполнитель работает только с натуральными числами:</p>
+                    <p>Составьте алгоритм получения из числа 23 числа 4, содержащий не более 5 команд. В ответе запишите только номера команд:</p>
+                    <!-- 21112 -->
+                    <p>Ответ: <input type="text" id="answer5" style="margin-left: 5px;"></p>
+                </section>
+                <br>
+                <hr>
+                <section>
+                    <h3>6</h3>
+                    <p>Напишите натуральное число x, для которого ложно высказывание:</p>
+                    <div class="big-table">
+                        <table>
+                            <tr>
+                                <td>Pascal</td>
+                                <td>Python</td>
+                                <td>C++</td>
+                            </tr>
+                            <tr>
+                                <td class="codesix">
+                                    <pre>
+                                        <code>
+var s, t: integer;
+begin
+ readln(s);
+ readln(t);
+ if not((s >= 2) and (t < 5)
+  then writeln("YES")
+  else writeln("NO")
+end.
+                                        </code>
+                                    </pre>
+                                </td>
+                                <td class="codesix">
+                                    <pre>
+                                        <code>
+s = int(input())
+t = int(input())
+if not ((s >= 2) and (t < 5)):
+    print("YES")
+else:
+    print("NO")
+                                        </code>
+                                    </pre>
+                                </td>
+                                <td class="codesix">
+                                    <pre>
+                                        <code>
+#include <iostream>
+using namespace std;
+
+int main(){
+   int s, t;
+   cin >> s;
+   cin >> t;
+   if !((s >= 2) && (t < 5))
+     cout << "YES" << endl;
+   else
+     cout << "NO" << endl;
+   return 0;
+
+ }
+                                        </code>
+                                    </pre>
+                                </td>
+                            </tr>
+                        </table>
+                        </div>
+                        <p>Было проведено 9 запусков программы, при которых в качестве значений переменных s и t вводились следующие пары чисел:</p>
+                        <q style="quotes: none;">(12, 5); (5, 3); (–4, 1); (2, –5); (5, –7); (10, 3); (18, 6); (3, 0); (2, 5)</q>
+                        <p>Сколько было запусков, при которых программа напечатала «YES»?:</p>
+                    <!-- 4 -->
+                    <p>Ответ: <input type="text" id="answer6" style="margin-left: 5px;"></p>
+                </section>
+                <br>
+                <hr>
+                <section>
+                    <h3>7</h3>
+                    <p>Доступ к файлу org.txt, находящемуся на сервере net.ru, осуществляется по протоколу http. Фрагменты адреса файла закодированы цифрами от 1 до 7. Запишите последовательность этих цифр, кодирующую адрес указанного файла в сети Интернет.</p>
+                    <ol>
+                        <li>org</li>
+                        <li>.ru</li>
+                        <li>/</li>
+                        <li>://</li>
+                        <li>http</li>
+                        <li>net</li>
+                        <li>.txt</li>
+                    </ol>
+                    <q style="quotes: none">НЕ (x < 8) ИЛИ (x < 7)</q>
+                    <!-- 5462317 -->
+                    <p>Ответ: <input type="text" id="answer7" style="margin-left: 5px;"></p>
+                </section>
+                <br>
+                <hr>
+                <section>
+                    <h3>8</h3>
+                    <p>В языке запросов поискового сервера для обозначения логической операции «ИЛИ» используется символ «|», а для обозначения логической операции
+                        «И» – символ «&»:</p>
+                    <p>В таблице приведены запросы и количество найденных по ним страниц некоторого сегмента сети Интернет.</p>
+                    <p>Запрос Найдено страниц (в тысячах):</p>
+                    <table>
+                        <tr>
+                            <td>Сатурн | Нептун</td>
+                            <td>3200</td>
+                        </tr>
+                        <tr>
+                            <td>Нептун</td>
+                            <td>1700</td>
+                        </tr>
+                        <tr>
+                            <td>Сатурн & Нептун</td>
+                            <td>800</td>
+                        </tr>
+                    </table>
+                    <p>Какое количество страниц (в тысячах) будет найдено по запросу Сатурн?</p>
+                    <p>Считается, что все запросы выполнялись практически одновременно, так что набор страниц, содержащих все искомые слова, не изменялся за время выполнения запросов:</p>
+                    <!-- 2300 -->
+                    <p>Ответ: <input type="text" id="answer8" style="margin-left: 5px;"></p>
+                </section>
+                <section>
+                    <h3>9</h3>
+                    <p>На рисунке – схема дорог, связывающих города A, B, C, D, E, F, G.</p>
+                    <p>По каждой дороге можно двигаться только в одном направлении, указанном стрелкой. Сколько существует различных путей из города A в город G?</p>
+                    <img src="https://gdzotvet.ru/images/informatika/oge/dorogi/04.png" alt="">
+                    <p>Впишите правильный ответ:</p>
+                    <!-- 7 -->
+                    <p>Ответ: <input type="text" id="answer9" style="margin-left: 5px;"></p>
+                </section>
+                <section>
+                    <h3>10</h3>
+                    <p>Переведите число 100 из десятичной системы счисления в двоичную систему счисления. Сколько единиц содержит полученное число? В ответе укажите одно число – количество единиц:</p>
+                    <!-- 3 -->
+                    <p>Ответ: <input type="text" id="answer10" style="margin-left: 5px;"></p>
+                </section>
+                <section>
+                    <h3>11</h3>
+                    <a href="../archivezip/Проза.zip" style="color: black; text-decoration: underline;">Скачать Проза.zip</a>
+                    <p>В одном из произведений А.С. Пушкина, текст которого приведён в подкаталоге каталога Проза, упоминается некая Курочкина. С помощью поисковых средств операционной системы и текстового редактора или браузера выясните её имя(заглавными буквами):</p>
+                    <!-- АКУЛИНА -->
+                    <p>Ответ: <input type="text" id="answer11" style="margin-left: 5px;"></p>
+                </section>
+                <section>
+                    <h3>12</h3>
+                    <a href="../archivezip/DEMO-12.zip" style="color: black; text-decoration: underline;">Скачать DEMO-12.zip</a>
+                    <p>Сколько файлов с расширением .rtf содержится в подкаталогах каталога DEMO-12? В ответе укажите только число:</p>
+                    <!-- 23 -->
+                    <p>Ответ: <input type="text" id="answer12" style="margin-left: 5px;"></p>
+                </section>
+                <p style="margin-bottom: 100px;"><button id="btn" onclick="checkitout()">Проверить</button></p>
+                <br>
+                <br>
+            </div>
+            <div id="result"></div>
+            <br>
+        </article>
+    </main>
+    <script>
+        countball = 0
+        all_question = 12;
+        tableanswer = "<table><tr><td>№</td><td>Ваш ответ</td><td>Правильный ответ</td></tr>";
+        function checkitout() {
+            for (let i = 1; i <= all_question; i++) {
+                let ans = document.getElementById('answer' + i).value;
+                if (ans == good_answer1[i-1]) {
+                    countball += 1;
+                    tableanswer += `<tr><td>${i}</td><td>${ans} - <b style='color: green'>Верный!</b></td><td><b>${good_answer1[i-1]}</b></td></tr>`
+                }
+                else {
+                    tableanswer += `<tr><td>${i}</td><td>${ans} - <b style='color: red'>Неверный!</b></td><td><b>${good_answer1[i-1]}</b></td></tr>`
+                }
+            }
+            document.getElementById('options-1').style.display = "none";
+            percent_solve = countball/all_question * 100;
+            percent_solve = percent_solve.toFixed();
+
+            // Отрисовка процентов
+            if (percent_solve <= 33) {
+                document.getElementById('result').innerHTML = "<h1>Прогресс выполнения:<br><br>" + percent_solve + "%" + " " + "<progress max='100' value='" + percent_solve + "' style='accent-color: red'></progress>";
+            }
+            if (33 < percent_solve && percent_solve < 65) {
+                document.getElementById('result').innerHTML = "<h1>Прогресс выполнения:<br><br>" + percent_solve + "%" + " " + "<progress max='100' value='" + percent_solve + "' style='accent-color: orange'></progress>";
+            }
+            if (percent_solve >= 67) {
+                document.getElementById('result').innerHTML = "<h1>Прогресс выполнения:<br><br>" + percent_solve + "%" + " " + "<progress max='100' value='" + percent_solve + "' style='accent-color: green'></progress>";
+            }
+
+            document.getElementById('result').innerHTML += `<br><h3>Вы выполнили ${countball} из ${all_question} возможных</h3><br>`;
+            document.getElementById('result').innerHTML += tableanswer
+            document.getElementById('result').innerHTML += `<br>`
+        }
+
+
+    </script>
+</body>
+
+</html>
