@@ -1,0 +1,161 @@
+q {
+    display: block;
+    padding: 9px;
+    margin: 0 0 1;
+    font-size: 16px;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.solution {
+    display: block;
+    padding: 7px;
+    font-size: 16px;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Кнопка перехода на практику */
+.btn-send {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin: 0 -2%;
+    margin-bottom: 30px;
+
+}
+
+.btn-send a {
+    width: 30%;
+    height: 45px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 100px;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+}
+
+
+.btn-send a span{
+    position: relative;
+    z-index: 2;
+    border-radius: 100px;
+  }
+  
+.btn-send a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: black;
+    transition: all .35s;
+    border-radius: 100px;
+  }
+  
+.btn-send a:hover{
+    color: #fff;
+    border-radius: 100px;
+  }
+  
+.btn-send a:hover:after{
+    width: 100%;
+    border-radius: 100px;   
+  }
+
+table {
+    background-color: #f5f5f5;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #333;
+}
+td {
+    border: 2px solid #ccc;
+    font-size: 16px;
+    padding: 7px;
+    text-align: center;
+}
+
+.height {
+    width: 500px;
+}
+
+.codesix {
+    background-color: #0d1117;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Адаптация под мобилки */
+@media screen and (max-width: 830px) {
+    q {
+        font-size: 14px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+
+    .btn-send a {
+        width: 70%;
+        font-size: 14px;
+    }
+    td {
+        font-size: 14px;
+    }
+    li {
+        font-size: 14px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .height {
+        width: 100%;
+    }
+
+    .big-table {
+        overflow: auto;
+        position: relative;
+    }
+    .big-table table {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .big-table td {
+        padding: 0;
+        font-size: 12px;
+    }
+
+    .heighttab {
+        width: 30%;
+    }
+
+}
