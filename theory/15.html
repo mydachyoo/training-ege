@@ -1,0 +1,224 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="css/example.css">
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <!-- Подключени подсветки кода -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+        <!-- Светлая тема -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+    
+        <script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+<h1 class="header__title">Информатика ОГЭ</h1>
+<h2>Разбор задания №15</h2>
+            </header>
+            <section>
+              <p>Это задание повышенной сложности, требует от сдающего знания: Алгоритмические конструкции. Логические значения, операции, выражения. Разбиение задачи на подзадачи, вспомогательный алгоритм. Обрабатываемые объекты: цепочки символов, числа, списки, деревья</p>
+              <p>И умение создавать и выполнять программы для заданного исполнителя (вариант задания 15.1) или на универсальном языке программирования (вариант задания 15.2).</p>
+              <p>Универсальный язык можно использовать любой, но в последующих примерах, будет использован Python</p>
+              <p>В задании 15.1 используется робот чертежник, и средство разработки КуМир</p>
+              <p>Мануал КуМир: <a href="http://bsosh6.shkola.hc.ru/teachers_pashut/tuzov/kumir/manual.pdf" style="color: red; text-decoration: underline" target="_blank">manual.pdf</a></p>
+              <p>15.2:</p>
+              <a href="https://docs-python.ru/tutorial/" style="color: black; text-decoration: underline" target="_blank">Документация Python</a>
+              <p>Для исполнения кода Python, можно использовать наш <a href="../interpretor.html" style="color: green; text-decoration: underline" target="_blank">Интерпретатор</a></p>
+            </section>
+            <br>
+            <hr>
+            <section>
+              <h1>Первая задача (15.1): </h1>
+              <div class="notetip"><strong>Разбор задания 15.1:</strong><p></p>
+<p>Исполнитель <em>Робот</em> умеет перемещаться по лабиринту, начерченному на плоскости, разбитой на клетки. Между соседними (по сторонам) клетками может стоять стена, через которую Робот пройти не может. <em>У Робота есть девять команд</em>. Четыре команды — это <em>команды-приказы:</em></p>
+<pre class="solution">
+вверх 
+вниз 
+влево 
+вправо
+</pre>
+<p>При выполнении любой из этих команд Робот перемещается на одну клетку соответственно: </p>
+<li>вверх ↑ </li>
+<li>вниз ↓</li>
+<li>влево ← </li>
+<li>вправо → </li>
+<p>Если Робот получит команду передвижения сквозь стену, то он <strong>разрушится</strong>. Также у Робота есть команда <strong>закрасить</strong>, при которой закрашивается клетка, в которой Робот находится в настоящий момент.<br>
+Ещё четыре команды — это <em>команды проверки условий</em>. Эти команды проверяют, свободен ли путь для Робота в каждом из четырёх возможных направлений:</p>
+<pre class="solution">сверху свободно 
+снизу свободно 
+слева свободно 
+справа свободно
+</pre>
+<p>Эти команды можно использовать вместе с условием <em>«если»</em>, имеющим следующий вид:</p>
+<pre class="solution"><strong>если </strong><em>условие </em><strong>то</strong>
+ последовательность команд
+<strong>все</strong>
+</pre>
+<p>Здесь <em>условие </em>— одна из команд проверки условия. <em>Последовательность команд</em> — это одна или несколько любых команд-приказов. </p>
+<div class="small"><em>Например, для передвижения на одну клетку вправо, если справа нет стенки, и закрашивания клетки можно использовать такой алгоритм:</em></div>
+<pre class="solution"><strong>если</strong> <em>справа свободно</em> <strong>то</strong>
+<em>вправо
+закрасить</em>
+<strong>все</strong>
+</pre>
+<p>В одном условии можно использовать несколько команд проверки условий, применяя логические связки <strong>и, или, не</strong>, например:</p>
+<pre class="solution"><strong>если</strong> (<em>справа свободно</em>) <strong>и</strong> (<strong>не</strong> <em>снизу свободно</em>) <strong>то</strong>
+ <em>вправо</em>
+<strong>все</strong>
+</pre><!-- adman_adcode (middle, 1) -->     <!-- Yandex.RTB R-A-1796173-1 -->
+ <!-- /adman_adcode (middle) -->
+<p>Для повторения последовательности команд можно использовать <strong>цикл «пока»</strong>, имеющий следующий вид:</p>
+<pre class="solution"><strong>нц пока</strong> <em>условие</em>
+   последовательность команд
+<strong>кц</strong>
+</pre>
+<p>Где <strong>кц</strong> — конец цикла, <strong>нц</strong> — начало цикла.</p>
+<div class="small"><em>Например, для движения вправо, пока это возможно, можно использовать следующий алгоритм:</em></div>
+<pre class="solution"><strong>нц пока</strong> <em>справа свободно</em>
+  <em>вправо</em>
+<strong>кц</strong>
+</pre>
+<p>&nbsp;&nbsp;<br>
+<u>Выполните задание:</u><br>
+На бесконечном поле есть горизонтальная и вертикальная стены. Правый конец горизонтальной стены соединён с нижним концом вертикальной стены. <strong>Длины стен неизвестны</strong>. В вертикальной стене есть ровно один проход, точное место прохода и его ширина неизвестны. Робот находится в клетке, расположенной непосредственно под горизонтальной стеной у её левого конца.<br>
+На рисунке указан один из возможных способов расположения стен и Робота (Робот обозначен буквой <em>«Р»</em>).<br>
+<img decoding="async" src="https://labs-org.ru/wp-content/uploads/000-52.png" alt="" width="306" height="303" class="aligncenter size-full wp-image-12125"></p>
+<li>Напишите для Робота алгоритм, закрашивающий все клетки, расположенные непосредственно правее вертикальной стены. </li>
+<li>Проход должен остаться незакрашенными. </li>
+<li>Робот должен закрасить только клетки, удовлетворяющие данному условию. Например, для приведённого выше рисунка Робот должен закрасить следующие клетки (см. рисунок).</li>
+<p><img decoding="async" loading="lazy" src="https://labs-org.ru/wp-content/uploads/01-3.png" alt="" width="305" height="303" class="aligncenter size-full wp-image-12126" srcset="https://labs-org.ru/wp-content/uploads/01-3.png 305w, https://labs-org.ru/wp-content/uploads/01-3-170x170.png 170w" sizes="(max-width: 305px) 100vw, 305px"></p>
+<li>При исполнении алгоритма Робот не должен разрушиться, выполнение алгоритма должно завершиться.</li>
+<li>Конечное расположение Робота может быть произвольным. </li>
+<li>Алгоритм должен решать задачу для любого допустимого расположения стен и любого расположения и размера прохода внутри стены.</li>
+<p>Алгоритм может быть выполнен в среде формального исполнителя или записан в текстовом редакторе. Сохраните алгоритм в текстовом файле.
+</p></div>
+            </section>
+            <br>
+            <hr>
+            <section>
+              <h1>Решение: </h1>
+              <ul>
+                <li>Комментарии будем обозначать красным цветом:  
+                  <pre class="solution"><span class="red"><em>Двигаемся вправо, пока не дойдем до края стены.</em></span>
+<strong>нц пока не сверху свободно
+  вправо
+кц</strong>
+<span class="red"><em>Шаг вверх.</em></span>
+<strong>вверх</strong>
+<span class="red"><em>Двигаемся вверх, пока не дойдем до края стены, закрашивая клетки.</em></span>
+<strong>нц пока не слева свободно
+  закрасить
+  вверх
+кц</strong>
+<span class="red"><em>Двигаемся вверх, пока не дойдем до стены (слева).</em></span>
+<strong>нц пока слева свободно
+  вверх
+кц</strong>
+<span class="red"><em>Двигаемся вверх, пока не дойдем до края стены, закрашивая клетки.</em></span>
+<strong>нц пока не слева свободно
+  закрасить
+  вверх
+кц</strong>
+</pre>
+                </li>
+              </ul>
+            </section>
+            <br>
+            <hr>
+            <section>
+              <h1>Вторая задача (15.2):</h1>
+              <p>Напишите программу, которая в последовательности натуральных чисел определяет количество чисел, кратных 4. Программа получает на вход количество чисел в последовательности, а затем сами числа. В последовательности всегда имеется число, кратное 4. Количество чисел не превышает 1000. Введённые числа не превышают 30 000. Программа должна вывести одно число  — количество чисел, кратных 4.</p>
+              <img src="../img/152.png" alt="">
+            </section>
+            <br>
+            <hr>
+            <section>
+              <h1>Решение: </h1>
+              <table>
+                <tr>
+                  <td>Python</td>
+                </tr>
+                <tr>
+                  <td class="codesix">
+                    <pre>
+                      <code>
+n = int(input())
+kol = 0
+for i in range(n):
+    a = int(input())
+    if a % 4 == 0:
+        kol += 1
+print(kol)
+                      </code>
+                    </pre>
+                  </td>
+                </tr>
+              </table>
+            </section>
+            <div class="btn-send">
+              <a href="../practice/15.html"><span>Задание 15: практика &#8594;</span></a>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

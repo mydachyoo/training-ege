@@ -1,0 +1,212 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Разбор №4 задания</h2> 
+            </header>
+            <section>
+                <h1>Графы</h1>
+                <p><b>Граф</b> – это набор вершин и связей между ними, называющихся рёбрами:</p>
+                <img src="../img/1-83-500x159.png" alt="">
+                <h1>Матрица и список смежности</h1>
+                <img src="../img/1_11-26-500x330.png" alt="">
+                <h1>Поиск кратчайшего пути (перебор)</h1>
+                <img src="../img/1-85-500x242.png" alt="">
+            </section>
+            <section>
+                <h1>Разберем задачу: </h1>
+                <p>Между населёнными пунктами A, B, C, D, E, F построены дороги, протяжённость которых (в километрах) приведена в таблице:</p>
+                <table class="height">
+                    <tbody><tr>
+                    <th style="background-color:#888;"></th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                    </tr>
+                    <tr>
+                    <th>A</th>
+                    <td style="background-color:#888;"></td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <th>B</th>
+                    <td>5</td>
+                    <td style="background-color:#888;"></td>
+                    <td>3</td>
+                    <td></td>
+                    <td>3</td>
+                    <td>4</td>
+                    </tr>
+                    <tr>
+                    <th>C</th>
+                    <td>8</td>
+                    <td>3</td>
+                    <td style="background-color:#888;"></td>
+                    <td>2</td>
+                    <td></td>
+                    <td>15</td>
+                    </tr>
+                    <tr>
+                    <th>D</th>
+                    <td>4</td>
+                    <td></td>
+                    <td>2</td>
+                    <td style="background-color:#888;"></td>
+                    <td>4</td>
+                    <td>12</td>
+                    </tr>
+                    <tr>
+                    <th>E</th>
+                    <td>1</td>
+                    <td>3</td>
+                    <td></td>
+                    <td>4</td>
+                    <td style="background-color:#888;"></td>
+                    <td>7</td>
+                    </tr>
+                    <tr>
+                    <th>F</th>
+                    <td></td>
+                    <td>4</td>
+                    <td>15</td>
+                    <td>12</td>
+                    <td>7</td>
+                    <td style="background-color:#888;"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>Определите длину кратчайшего пути между пунктами <b>A</b> и <b>F</b>, проходящего через пункт <b>C</b>.
+                    Передвигаться можно только по дорогам, протяжённость которых указана в таблице. Каждый пункт можно посетить только один раз.</p>
+            </section>
+            <section>
+                <ul>
+                    <li>Найдём все варианты маршрутов из A в F, проходящих через пункт С, и выберем самый короткий.</li>
+                    <li>Пройдемся по таблице построчно слева-направо сверху-вниз:
+                        <div class="solution">
+<p>A—B—C—D—E--F: длина маршрута 25 км.</p>
+<p>A—B—C—D--F: длина маршрута 29 км.</p>
+<p>A—B—C--F: длина маршрута 28 км</p>.
+<p>    пропустим B:</p>
+<p>    пропустим B:</p>
+<p>A—C—D—E--F: длина маршрута 20 км.</p>
+<p>    пропустим и D:</p>
+<p>A—C—E--F: длина маршрута 16 км.</p>
+<p>    пропустим и E:</p>
+<p>A—C—D--F: длина маршрута 24 км.</p>
+<p>A—C--F: длина маршрута 23 км.</p>
+<p>    поменяем следование маршрута, исключая пункты с большим числом км:</p>
+<p>A—C—B--F: длина маршрута 15 км.</p>
+<p>A—D—С—B--F: длина маршрута 13 км.</p>
+                        </div>
+                    </li>
+                    <li>
+                        Самый короткий путь: <b style="color: red">A—D—С—B--F.</b> Длина маршрута <b>13 км.</b>
+                    </li>
+                </ul>
+                <p><b>Ответ:</b> 13</p>
+            </section>
+            <hr>
+            <section>
+                <h1>Вторая задача: </h1>
+                <p>На схеме приведена стоимость перевозок между соседними железнодорожными станциями, укажите таблицу, соответствующую схеме:</p>
+                <img src="../img/4-1practice.png" alt="">
+                <img src="../img/0-10.png" alt="">
+            </section>
+            <section>
+                <h1>Решение: </h1>
+                <ul>
+                    <li>Необходимо рассмотреть каждую таблицу и подсчитать количество пересечений для каждой строки, т.е. для каждой ж.д. станции. В скобках будем указывать соответствующую данной станции стоимость:
+                        <br>1 таблица:
+                        <div class="solution">
+<p>A: B(3), E(2), F(2)</p> 
+<p>Здесь уже можно остановиться, т.к. для станции A по схеме два ребра у вершины А, </p>
+<p>а по таблице уже три значения</p>
+                        </div> 
+                    </li>
+                    <li>2 таблица: 
+                        <div class="solution">
+<p>A: B(3), F(2) </p>
+<p>B: A(3), C(3), E(5), F(4)</p>
+<p>C: B(3), D(2), E(5) </p>
+<p>D: C(2), E(3)</p>
+<p>F: A(2), B(4)</p>
+<br>z
+<p>Данные на схеме полностью совпадают с табличными!</p>
+
+                        </div>
+                    </li>
+                    <li>Таблица <b>2</b> полностью соответствует схеме.</li>
+                </ul>
+                <p><b>Ответ: </b>2</p>
+                <br>
+            </section>
+            <div class="btn-send">
+                <a href="../practice/4.html"><span>Задание 4: практика &#8594;</span></a>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

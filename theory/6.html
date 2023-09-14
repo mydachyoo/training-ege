@@ -1,0 +1,168 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="../theory/css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Подключени подсветки кода -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <!-- Светлая тема -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Разбор задания №6</h2> 
+            </header>
+            <section>
+                <p>Для решения этого задания необходимо уметь пользоваться программным обеспечением, в частности средой разработки языка программирования<b>(C++, Python, Pascal)</b>.</p>
+                <p>Рекомендуется <b>Python</b> или <b>Pascal</b>, из-за простоты их использования.</p>
+                <p>Для решения этого задания, <b>необязательно</b> иметь навык программирования.</p>
+            </section>
+            <section>
+                <h3>Первая задача: </h3>
+                <p>Ниже приведена программа, записанная на нескольких языках программирования:</p>
+                <div class="big-table">
+                <table>
+                    <tr>
+                        <td>Pascal</td>
+                        <td>Python</td>
+                        <td>C++</td>
+                    </tr>
+                    <tr>
+                        <td class="codesix">
+                            <pre>
+                                <code>
+var s, t: integer;
+begin
+readln(s);
+readln(t);
+if (s > 10) or (t > 10)
+ then
+writeln("YES")
+ else
+writeln("NO")
+end.
+                                </code>
+                            </pre>
+                        </td>
+                        <td class="codesix">
+                            <pre>
+                                <code>
+s = int(input())
+t = int(input())
+if (s > 10) or (t > 10):
+ print("YES")
+else:
+ print("NO")
+                                </code>
+                            </pre>
+                        </td>
+                        <td class="codesix">
+                            <pre>
+                                <code>
+#include <iostream>
+using namespace std;
+int main(){
+ int s, t;
+ cin >> s;
+ cin >> t;
+ if (s > 10 || t > 10)
+   cout << "YES" << endl;
+ else
+   cout << "NO" << endl;
+ return 0;
+ }
+                                </code>
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <br>
+                <p>Было проведено 9 запусков программы, при которых в качестве значений переменных вводились следующие пары чисел <b>(s, t)</b>:</p>
+                <q style="quotes: none;">(1, 2); (11, 2); (1, 12); (11, 12); (–11, –12); (–11, 12); (–12, 11); (10, 10); (10, 5)</q>
+                <p>Сколько было запусков, при которых программа напечатала <b>«YES»?</b></p>
+            </section>
+            <section>
+                <h1>Решение: </h1>
+                <ul>
+                    <li>Программа напечатает «YES», если одна из введённых переменных s или t будет больше 10.</li>
+                    <li>Значит, было 5 запусков, при которых программа напечатала «YES». В качестве значений переменных s и t в этих случаях вводились следующие пары чисел:
+                        <div class="solution">(11, 2); (1, 12); (11, 12); (–11, 12); (–12, 11)</div>
+                    </li>
+                </ul>
+                <p><b>Ответ: </b>9</p>
+            </section>
+            <section>
+                <h1>Альтернативное решение:</h1>
+                <ul>
+                    <li>Решение, заключается в переписывание кода Python в <a href="../interpretor.html" style="color: #333; text-decoration: underline" target="_blank">Интерпретатор</a>, на экзамене это средство разработки Python IDLE, и последующего запуска программы.</li>
+
+                </ul>
+                <p><b>Ответ: </b>9</p>
+            </section>
+            <div class="btn-send">
+                <a href="../practice/6.html"><span>Задание 6: практика &#8594;</span></a>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

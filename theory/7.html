@@ -1,0 +1,184 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="../theory/css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Разбор задания №7</h2> 
+            </header>
+            <section>
+                <h3>Первая задача:</h3>
+                <p>Доступ к файлу rus.doc, находящемуся на сервере obr.org, осуществляется по протоколу https. Фрагменты адреса файла закодированы цифрами от 1 до 7. Запишите в ответе последовательность этих цифр, кодирующую адрес указанного файла в сети Интернет.</p>
+                <div class="solution">
+<p>1) obr.</p>
+<p>2) /</p>
+<p>3) org</p>
+<p>4) ://</p>
+<p>5) doc</p>
+<p>6) rus.</p>
+<p>7) https</p>
+                </div>
+            </section>
+            <section>
+                <h1>Решение: </h1>
+                <ul>
+                    <li>Поскольку файл находится на сервере, т.е. в этом случае в сети Интернет, то для начала определим протокол, поскольку он всегда находится на первом месте. Выбираем протокол под пунктом <b>7 — https</b>.
+                    <div class="solution">
+<p>https</p>
+<p><b>7</b></p>
+                    </div>
+                    </li>
+                    <li>После протокола всегда следует разделитель <b>://</b>(пункт 4):
+                    <div class="solution">
+<p>https://</p>
+<b>7   4</b>
+                    </div>
+                </li>
+                <li>
+                    Далее всегда следует имя сервера — по заданию сервер obr.org. <b>Соединяем пункты 1 и и добавляем к адресу</b>:
+                    <div class="solution">
+<p>https://obr.org</p>
+<b> 7   4  1   3</b> 
+                    </div>
+                </li>
+                <li><b>Файл в адресе всегда находится на последнем месте.</b> По заданию файл имеет имя rus.doc, ему соответствуют <b>6 и 5</b>:
+                    <div class="solution">
+<p>https://obr.org...rus.doc</p>
+<b> 7   4  1   3 ...  6    5</b>
+                    </div>
+                </li>
+                <li>
+                    Между именем файла и названием сервера должен находиться символ<b> /</b> — это как раз единственный оставшийся пункт —<b> 2</b>:
+                    <div class="solution">
+<p>https://obr.org/rus.doc</p>
+<b>7   4  1   3 2  6    5</b>
+                    </div>
+                </li>
+                </ul>
+                <p><b>Ответ: </b>7413265</p>
+            </section>
+            <br>
+            <hr>
+            <section>
+                <h3>Вторая задача: </h3>
+                <p>На месте преступления были обнаружены четыре обрывка бумаги. Следствие установило, что на них записаны фрагменты одного IP-адреса. Криминалисты обозначили эти фрагменты буквами<b> А, Б, В и Г</b>:</p>
+                <table>
+                    <tr>
+                        <td>4.243</td>
+                        <td>116.2</td>
+                        <td>13</td>
+                        <td>.23</td>
+                    </tr>
+                    <tr>
+                        <td>А</td>
+                        <td>Б</td>
+                        <td>В</td>
+                        <td>Г</td>
+                    </tr>
+                </table>
+                <p>Восстановите IP-адрес. В ответе укажите последовательность букв, обозначающих фрагменты, в порядке, соответствующем IP-адресу. </p>
+            </section>
+            <section>
+                <h1>Решение: </h1>
+                <h3>IP-адрес компьютера</h3>
+                <ul>
+                    <li>Данный адрес состоит из 4 частей, разделенных точкой (в конце точка не ставится).</li>
+                    <li>Каждая часть IP-адреса представляет собой число от 0 до 255:
+                        <div class="solution">
+<p>0..255.0..255.0..255.0..255</p>
+
+<p>например:</p>
+<b>245.176.185.68</b>
+                        </div>
+                    </li>
+                </ul>
+                <h3>Итак, решение: </h3>
+                <ul>
+                    <li> IP-адрес состоит из 4 частей — чисел от 0 до 255 — разделенных точкой. Но в конце точка не ставится!</li>
+                    <li>Поскольку в начале точка тоже не нужна, то фрагмент <b>Г</b> точно не первый.</li>
+                    <li>Допустим, первый фрагмент — <b>А</b>; значит, за ним должна сразу следовать точка — это фрагмент <b>Г</b>. После которого может не может идти ни фрагмент <b>В</b>, ни фрагмент <b>Б</b> (число будет очень большим):
+                        <div class="solution">
+<p>4.243.23116.2 - <b style="color: red">нет!</b></b></p>
+<b>  А   Г   Б </b> 
+<p>4.243.2313 - <b style="color: red">нет!</b></b></p>
+<p><b>  А   Г   В  </b></p>
+                        </div>
+                    </li>
+                    <li>То есть допущение, что первый фрагмент А — не верно!</li>
+                    <li>Допустим, первый фрагмент — <b>Б</b>. Рассмотрим все варианты продолжения:
+                        <div class="solution">
+<p>116.24.24313 - <b style="color: red">нет!</b></p>
+<p><b>  Б   А   В  </b></p>
+<p>116.24.243.2313 - <b style="color: red">нет!</b></p>
+<p>  Б   А   Г   В- <b style="color: red">нет!</b></p>
+
+<p>116.2134.243.23 - <b style="color: red">нет!</b></p>
+<p><b>  Б   В   А   Г</b></p>
+<p>116.213.234.243 - <b style="color: green">да!</b></p>
+<p><b>  Б   В   Г   А</b></p>
+                        </div>
+                    </li>
+                </ul>
+                <p><b>Ответ: </b>БВГА</p>
+            </section>
+            <div class="btn-send">
+                <a href="../practice/7.html"><span>Задание 7: практика &#8594;</span></a>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

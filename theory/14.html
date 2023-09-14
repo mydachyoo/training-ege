@@ -1,0 +1,294 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googleb.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unib 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../tdeory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Pytdon</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Разбор задания №14</h2> 
+            </header>
+            <section>
+                <h3>Типы ссылок в ячейках</h3>
+                <p>Формулы, записанные в ячейках таблицы, бывают <b>относительными, абсолютными и смешанными</b>.</p>
+                <ul>
+                    <li>Имена ячеек в относительной формуле автоматически меняются при переносе или копировании ячейки с формулой в другое место таблицы:</li>
+                    <img src="../img/1-73-500x97.png" alt="">
+                    <li>Имена ячеек <strong>в абсолютной формуле не меняются</strong> при переносе или копировании ячейки с формулой в другое место таблицы. </li>
+                    <li>Для указания того, что не меняется столбец, ставится знак <b>$</b> перед буквой столбца. Для указания того, что не меняется строка, ставится знак <b>$</b> перед номером строки:</li>
+                    <li>Для указания того, что не меняется столбец, ставится знак <b>$</b> перед буквой столбца. Для указания того, что не меняется строка, ставится знак 	<b>$</b> перед номером строки:</li>
+                    <img src="../img/1_1-43-500x105.png" alt="">
+                    <li><strong>В смешанных формулах</strong> меняется только относительная часть:</li>
+                    <img aria-describedby="caption-attachment-6044" decoding="async" loading="lazy" src="https://labs-org.ru/wp-content/uploads/2017/06/1-74-500x106.png" alt="информатика огэ теория" widtd="500" height="106" class="size-medium wp-image-6044" srcset="https://labs-org.ru/wp-content/uploads/2017/06/1-74-500x106.png 500w, https://labs-org.ru/wp-content/uploads/2017/06/1-74.png 677w" sizes="(max-widtd: 500px) 100vw, 500px">
+                </ul>
+                <h3>Стандартные функции Excel</h3>
+                <p>В ОГЭ встречаются в формулах следующие стандартные функции. Ниже рассмотрен  их смысл. Наводите курсор на пример для просмотра ответа.</p>
+                <div class="big-table">
+                <table>
+                    <tr>
+                    <td>русский</td>
+                    <td>англ.</td>
+                    <td>действие</td>
+                    <td>синтаксис</td>
+                    </tr>
+                    <tr>
+                    <td><strong><span class="blue">СУММ</span></strong></td>
+                    <td>SUM</td>
+                    <td>Суммирует все числа в интервале ячеек</td>
+                    <td style="text-align:left">СУММ(число1;число2)</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4">Пример:</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4"><span class="tooltips " style="" title="">=СУММ(3; 2)</span><br>
+                    <span class="tooltips " style="" title="">=СУММ(A2:A4)</span></td>
+                    </tr>
+                    <tr>
+                    <td><strong><span class="blue">СЧЁТ</span></strong></td>
+                    <td>COUNT</td>
+                    <td>Подсчитывает количество всех непустых значений указанных ячеек</td>
+                    <td style="text-align:left">СЧЁТ(значение1, [значение2],…)</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4">Пример:</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4"><span class="tooltips " style="" title="">=СЧЁТ(A5:A8)</span></td>
+                    </tr>
+                    <tr>
+                    <td><strong><span class="blue">СРЗНАЧ</span></strong></td>
+                    <td>AVERAGE</td>
+                    <td>Возвращает среднее значение всех непустых значений указанных ячеек</td>
+                    <td style="text-align:left">СРЕДНЕЕ(число1, [число2],…)</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4">Пример:</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4"><span class="tooltips " style="" title="">=СРЗНАЧ(A2:A6)</span></td>
+                    </tr>
+                    <tr>
+                    <td><strong><span class="blue">МАКС</span></strong></td>
+                    <td>MAX</td>
+                    <td>Возвращает наибольшее значение из набора значений</td>
+                    <td style="text-align:left">МАКС(число1;число2; …)
+                    </td>
+                    </tr>
+                    <tr>
+                    <td colspan="4">Пример:</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4"><span class="tooltips " style="" title="">=МАКС(A2:A6)</span></td>
+                    </tr>
+                    <tr>
+                    <td><strong><span class="blue">МИН</span></strong></td>
+                    <td>MIN</td>
+                    <td>Возвращает наименьшее значение из набора значений</td>
+                    <td style="text-align:left">МИН(число1;число2; …)
+                    </td>
+                    </tr>
+                    <tr>
+                    <td colspan="4">Пример:</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4"><span class="tooltips " style="" title="">=МИН(A2:A6)</span></td>
+                    </tr>
+                    <tr>
+                    <td><strong><span class="blue">ЕСЛИ</span></strong></td>
+                    <td>IF</td>
+                    <td>Проверка условия. Функция с тремя аргументами: первый аргумент — логическое выражение; если значение первого аргумента — истина, то результатом выполнения функции является второй аргумент. Если ложно — третий аргумент.</td>
+                    <td style="text-align:left">ЕСЛИ(лог_выражение;<br>
+                    значение_если_истина;<br>
+                    значение_если_ложь)
+                    </td>
+                    </tr><tr>
+                    <td colspan="4">Пример:</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4"><span class="tooltips " style="" title="">=ЕСЛИ(A2&gt;B2;"Превышение";"ОК")</span></td>
+                    </tr>
+                    <tr>
+                    <td><strong><span class="blue">СЧЁТЕСЛИ</span></strong></td>
+                    <td>COUNTIF</td>
+                    <td>Количество непустых ячеек в указанном диапазоне, удовлетворяющих заданному условию.</td>
+                    <td style="text-align:left">СЧЁТЕСЛИ(диапазон, критерий)
+                    </td>
+                    </tr>
+                    <tr>
+                    <td colspan="4">Пример:</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4"><span class="tooltips " style="" title="">=СЧЁТЕСЛИ(A2:A5;"яблоки")</span></td>
+                    </tr>
+                    <tr>
+                    <td><strong><span class="blue">СУММЕСЛИ</span></strong></td>
+                    <td>SUMIF</td>
+                    <td>Сумма непустых ячеек в указанном диапазоне, удовлетворяющих заданному условию.</td>
+                    <td style="text-align:left">СУММЕСЛИ<br>
+                    (диапазон, критерий, [диапазон_суммирования])
+                    </td>
+                    </tr>
+                    <tr>
+                    <td colspan="4">Пример:</td>
+                    </tr>
+                    <tr>
+                    <td colspan="4"><span class="tooltips " style="" title="">=СУММЕСЛИ(B2:B25;"&gt;5")</span></td>
+                    </tr>
+                    </table>
+                </div>
+                <p>В качестве параметра функции везде указывается диапазон ячеек: <b>МИН(А2:А240)</b></p>
+                <ul>
+                    <li>следует иметь в виду, что при использовании функции <b>СРЗНАЧ</b> не учитываются пустые ячейки и текстовые ячейки; например, после ввода формулы в <strong>C2</strong> появится значение <strong>2</strong> (не учитывается пустая <strong>А2</strong>):</li>
+                    <img decoding="async" loading="lazy" src="https://labs-org.ru/wp-content/uploads/2017/06/1-32.png" alt="1" widtd="355" height="101" class="aligncenter size-full wp-image-5073">
+                    <h3>Построение диаграмм</h3>
+                    <li>Диаграммы используются для наглядного представления табличных данных.</li>
+                    <li>Разные <strong>типы диаграмм</strong> используются в зависимости от необходимого эффекта визуализации.</li>
+                    <li>Так, <em><strong>круговая</strong> </em>и <em><strong>кольцевая </strong></em>диаграммы <em>отображают соотношение находящихся в выбранном диапазоне ячеек данных к их общей сумме</em>. Иными словами, эти типы служат для представления  доли отдельных составляющих в общей сумме.</li>
+                    <li>Соответствие секторов круговой диаграммы (если она намеренно НЕ перевернута) <strong>начинается с «севера»</strong>: верхний сектор соответствует первой ячейке диапазона.</li>
+                    <img decoding="async" loading="lazy" src="https://labs-org.ru/wp-content/uploads/2017/06/2-13-500x236.png" alt="круговая диаграмма, объяснение 7 задания егэ" widtd="500" height="236" class="aligncenter size-medium wp-image-7640" srcset="https://labs-org.ru/wp-content/uploads/2017/06/2-13-500x236.png 500w, https://labs-org.ru/wp-content/uploads/2017/06/2-13-768x362.png 768w, https://labs-org.ru/wp-content/uploads/2017/06/2-13-900x424.png 900w, https://labs-org.ru/wp-content/uploads/2017/06/2-13-720x339.png 720w, https://labs-org.ru/wp-content/uploads/2017/06/2-13.png 1104w" sizes="(max-widtd: 500px) 100vw, 500px">
+                    <li>Типы диаграмм <em><strong>Линейчатая </strong></em>и <em><strong>Гистограмма </strong></em>(на левом рис.), а также <em><strong>График </strong></em>и <em><strong>Точечная </strong></em>(на рис. справа) <em>отображают абсолютные значения в выбранном диапазоне ячеек</em>.</li>
+                    <img decoding="async" loading="lazy" src="https://labs-org.ru/wp-content/uploads/2017/06/5-500x172.png" alt="гистограмма, 14 задание огэ" widtd="500" height="172" class="aligncenter size-medium wp-image-7641" srcset="https://labs-org.ru/wp-content/uploads/2017/06/5-500x172.png 500w, https://labs-org.ru/wp-content/uploads/2017/06/5-768x264.png 768w, https://labs-org.ru/wp-content/uploads/2017/06/5-900x309.png 900w, https://labs-org.ru/wp-content/uploads/2017/06/5-720x248.png 720w, https://labs-org.ru/wp-content/uploads/2017/06/5.png 1620w" sizes="(max-widtd: 500px) 100vw, 500px">
+                </ul>
+            </section>
+            <br>
+            <hr>
+            <section>
+                <h1>Первая задача: </h1>
+                <p>В электронную таблицу занесли данные о тестировании учеников по выбранным ими предметам.</p>
+                <table>
+                    <tr>
+                    <td></td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    </tr>
+                    <tr>
+                    <td>1</td>
+                    <td>Округ</td>
+                    <td>Фамилия</td>
+                    <td>Предмет</td>
+                    <td>Баллы</td>
+                    </tr>
+                    <tr>
+                    <td>2</td>
+                    <td>С</td>
+                    <td>Ученик 1</td>
+                    <td>Физика</td>
+                    <td>240</td>
+                    </tr>
+                    <tr>
+                    <td>3</td>
+                    <td>В</td>
+                    <td>Ученик 2</td>
+                    <td>Физкультура</td>
+                    <td>782</td>
+                    </tr>
+                    <tr>
+                    <td>4</td>
+                    <td>Ю</td>
+                    <td>Ученик 3</td>
+                    <td>Биология</td>
+                    <td>361</td>
+                    </tr>
+                    <tr>
+                    <td>5</td>
+                    <td>СВ</td>
+                    <td>Ученик 4</td>
+                    <td>Обществознание</td>
+                    <td>377</td>
+                    </tr>
+                    </table>
+                    <p>В столбце <b>A</b> записан код округа, в котором учится ученик;<br>
+                        в столбце <b>B</b> – код фамилии ученика;<br>
+                        в столбце <b>C</b> – выбранный учеником предмет;<br>
+                        в столбце <b>D</b> – тестовый балл.<br>
+                        Всего в электронную таблицу были занесены данные по <strong>1000</strong> учеников.</p>
+                    <p>Откройте <b>файл</b> с данной электронной таблицей (расположение файла Вам сообщат организаторы экзамена). На основании данных, содержащихся в этой таблице, выполните задания.</p>
+                    <a href="../archivezip/task-1.xls" style="color: black; text-decoration: underline;">Скачать task-1.xls</a>
+                    <ol>
+                        <li><em>Сколько учеников, которые проходили тестирование <strong>по информатике</strong>, набрали <strong>более 600 баллов</strong>?</em> Ответ запишите в ячейку <b>H2</b> таблицы.</li>
+                        <li><em>Каков <strong>средний тестовый балл</strong> учеников, которые проходили тестирование по информатике?</em> Ответ запишите в ячейку <b>H3</b> таблицы с точностью не менее двух знаков после запятой.</li>
+                        <li><em>Постройте <strong>круговую диаграмму</strong>, отображающую соотношение числа участников тестирования из округов с кодами <strong>«В»</strong>, <strong>«Зел»</strong> и <strong>«З»</strong></em>. Левый верхний угол диаграммы разместите вблизи ячейки <b>G6</b>. В поле диаграммы должны присутствовать легенда (обозначение соответствия данных определённому сектору диаграммы) и числовые значения данных, по которым построена диаграмма.</li>
+                    </ol>
+                    <p>Полученную таблицу необходимо сохранить под именем, указанным организаторами экзамена.
+                    </p>
+            </section>
+            <br>
+            <hr>
+            <section>
+                <h1>Решение: </h1>
+                <ul>
+                    <li>Поскольку спрашивается об учениках, которые проходили тестирование <strong>по информатике</strong> и набрали <strong>более 600 баллов</strong>, то здесь необходимо учесть <u>одновременно два условия</u>. Поэтому будем использовать функцию <b>ЕСЛИ</b> с логическим оператором <b>И</b> (одновременное выполнение нескольких условий). В ячейку <b>E2</b> запишем формулу:</li>
+                    <div class="solution">=ЕСЛИ(И(C2="информатика"; D2&gt;600); 1;0))</div>
+                    <li>Теперь эту формулу необходимо скопировать во все ячейки столбца <code>E</code>. Для этого поместите курсор в правый нижний угол ячейки <code>Е2</code>, и, когда курсор мыши приобретет вид крестика дважды щелкните левой кнопкой мыши. Формула должна при этом скопироваться во все нижние ячейки столбца. </li>
+                    <li>Результирующая формула по заданию должна размещаться в ячейке <code>H2</code>. Установите курсор в ячейку. Для выполнения задания нам достаточно посчитать, сколько единиц в ячейках столбца <code>E</code>. Для этого мы можем суммировать их. Введите формулу:</li>
+                    <div class="solution">=СУММ(Е:Е)</div>
+                    <p><b>Ответ: </b>32</p>
+                </ul>
+                <div class="btn-send">
+                    <a href="../practice/14.html"><span>Задание 14: практика &#8594;</span></a>
+                </div>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>

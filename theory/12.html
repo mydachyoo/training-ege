@@ -1,0 +1,150 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="../theory/css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Разбор задание №12</h2> 
+            </header>
+            <section>
+                <h1>Первое задание: </h1>
+                <p>Сколько файлов с расширением <b>.txt</b> содержится в подкаталогах каталога <b>Проза-2</b>? В ответе укажите только число. </p>
+                <a href="../archivezip/Проза-2.zip" download="" style="color: black; text-decoration: underline;">Скачать Архив</a>
+            </section>
+            <br>
+            <hr>
+            <section>
+                <h1>Решение: </h1>
+                <ul>
+                    <li>Откройте каталог Проза.</li>
+                    <li>В поле для поиска введите маску для поиска фалов с любым именем но обязательно с расширением <b>txt:</b>
+                        <div class="solution">*.txt</div>
+                    </li>
+                    <li>Символ <b>*</b> означает последовательность любых символов.</li>
+                </ul>
+                <img src="../img/827.png" alt="">
+                <ul>
+                    <li>В окне отобразились файлы. Их можно пересчитать, но можно и посмотреть количество элементов в левом нижнем углу открытого окна:</li>
+                </ul>
+                <img src="../img/369.png" alt="">
+                <ul>
+                    <li>Таким образом, ответ <b style="color: red;">16.</b></li>
+                </ul>
+                <p><b>Ответ: </b>16</p>
+            </section>
+            <br>
+            <hr>
+            <section>
+                <h1>Второе задание: </h1>
+                <p>Пользователь работал с каталогом <b>Подготовка</b>. Сначала он поднялся на один уровень вверх, затем спустился на один уровень вниз, потом ещё раз спустился на один уровень вниз. В результате он оказался в каталоге</p>
+                <h1>C:\ГИА\Задания\График</h1>
+                <p>Укажите полный путь каталога, с которым пользователь начинал работу</p>
+<p>1) C:\ГИА\Документы\Редактирование\Подготовка</p>
+<p>2) C:\Подготовка</p>
+<p>3) C:\ГИА\Документы\Подготовка</p>
+<p>4) C:\ГИА\Подготовка</p>
+            </section>
+            <br>
+            <hr>
+            <section>
+                <h2>Решение: </h2>
+                <p>1. Проследим действия пользователя последовательно (не обязательно):</p>
+                <ul>
+                    <li>из каталога Подготовка он поднялся на один уровень: 
+                        <div class="solution">...←\Подготовка</div>
+                    </li>
+                    <li>затем спустился на один уровень вниз:
+                        <div class="solution">...→\...</div>
+                    </li>
+                    <li>потом ещё раз спустился на один уровень вниз:
+                        <div class="solution">...\...→\...</div>
+                    </li>
+                    <li>в результате он оказался в каталоге:
+                        <div class="solution">C:\ГИА\Задания\График</div>
+                    </li>
+                    <li>Подставим в получившийся «шаблон»:
+                        <div class="solution">
+                            <p>   ...\  ...  \...</p>
+                            <p>C:\ГИА\Задания\График</p>
+                        </div>
+                    </li>
+                </ul>
+                <p>2. Рассмотрим итоговое расположение и проследим «обратные» действия пользователя в обратном порядке с конца к началу. Красным будем выделять текущее нахождение.</p>
+                <ul>
+                    <li>итоговое расположение:
+                        <div class="solution">C:\ГИА\Задания\График</div>
+                    </li>
+                    <li>подъем на один уровень вверх:
+                        <div class="solution">C:\ГИА\<b style="color: red">Задания</b></div>
+                    </li>
+                    <li>подъем на один уровень вверх еще раз:
+                        <div class="solution">C:\<b style="color: red">ГИА</b></div>
+                    </li>
+                    <li>спуск на один уровень вниз (в каталог Подготовка):
+                        <div class="solution">C:\ГИА\<b style="color: red">Подготовка</b></div>
+                    </li>
+                </ul>
+                <p>3. Правильный вариант находится под номером <b style="color: red">4.</b> </p>
+            </section>
+            <p><b>Ответ: </b>4</p>
+            <div class="btn-send">
+                <a href="../practice/12.html"><span>Задание 12: практика &#8594;</span></a>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

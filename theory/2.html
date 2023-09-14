@@ -1,0 +1,234 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Разбор №2 задания</h2> 
+            </header>
+            <section>
+                <p>От разведчика было получено сообщение:</p>
+                <q style="quotes: none">001001110110100</q>
+                <p>В этом сообщении зашифрован пароль – последовательность русских букв.
+                    В пароле использовались только буквы <b>А, Б, К, Л, О, С</b>; каждая буква кодировалась двоичным словом по следующей таблице:</p>
+                <table>
+                    <tr>
+                        <td>А</td>
+                        <td>Б</td>
+                        <td>К</td>
+                        <td>Л</td>
+                        <td>О</td>
+                        <td>С</td>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>100</td>
+                        <td>101</td>
+                        <td>111</td>
+                        <td>00</td>
+                        <td>110</td>
+                    </tr>
+                </table>
+                <p>Расшифруйте сообщение. Запишите в ответе пароль: </p>
+            </section>
+            <section>
+                <h1>Решение: </h1>
+                <ul>
+                    <li>Распределим цифры закодированного сообщения по кодовым словам букв, представленных в таблице. Будем «двигаться» слева направо:
+                        <table>
+                            <tr>
+                                <td>00</td>
+                                <td>100</td>
+                                <td>111</td>
+                                <td>01</td>
+                                <td>101</td>
+                                <td>00</td>
+                            </tr>
+                            <tr>
+                                <td>О</td>
+                                <td>Б</td>
+                                <td>Л</td>
+                                <td>А</td>
+                                <td>К</td>
+                                <td>О</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        Получаем ответ <b>ОБЛАКО</b>
+                    </li>
+                </ul>
+                <p><b>Ответ: </b>ОБЛАКО</p>
+            </section>
+            <hr />
+            <section>
+                <h3>Вторая задача: </h3>
+                <p>От разведчика было получено сообщение:</p>
+                <q style="quotes: none">010011000111001</q>
+                <p>В этом сообщении зашифрован пароль – последовательность русских букв.
+                    В пароле использовались только буквы <b>А, Б, К, О, Р, С</b>; каждая буква кодировалась двоичным словом по следующей таблице:</p>
+                <table>
+                    <td>А</td>
+                    <td>Б</td>
+                    <td>К</td>
+                    <td>О</td>
+                    <td>Р</td>
+                    <td>С</td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>00</td>
+                    <td>110</td>
+                    <td>011</td>
+                    <td>111</td>
+                    <td>010</td>
+                </table>
+            </section>
+            <section>
+                <h1>Решение: </h1>
+                <ul>
+                    <li>
+                        Посмотрим на зашифрованное сообщение слева направо. В начале шифра идет 01, что может быть кодом как для буквы А, так и началом кодовых слов для букв О и С. Получится неоднозначность.
+                    </li>
+                    <li>Значит, начнем декодирование справа налево.</li>
+                    <li>Распределим цифры закодированного сообщения по кодовым словам букв, представленных в таблице. Будем «двигаться» слева направо:
+                        <table>
+                            <tr>
+                                <td>010</td>
+                                <td>010</td>
+                                <td>00</td>
+                                <td>01</td>
+                                <td>110</td>
+                                <td>01</td>
+                            </tr>
+                            <tr>
+                                <td>С</td>
+                                <td>О</td>
+                                <td>Б</td>
+                                <td>А</td>
+                                <td>К</td>
+                                <td>А</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        Получаем ответ <b>СОБАКА</b>
+                    </li>
+                </ul>
+                <p><b>Ответ: </b>СОБАКА.</p>
+            </section>
+            <hr />
+            <section>
+                <h3>Третья задача: </h3>
+                <p>От разведчика была получена следующая шифрованная радиограмма, переданная с использованием азбуки Морзе:</p>
+                <q style="quotes: none">−•−•−••−−•−−</q>
+                <p>При передаче радиограммы было потеряно разбиение на буквы, но известно, что в радиограмме использовались только следующие буквы:</p>
+                <table>
+                    <tr>
+                        <td>Т</td>
+                        <td>А</td>
+                        <td>У</td>
+                        <td>Ж</td>
+                        <td>Х</td>
+                    </tr>
+                    <tr>
+                        <td>−</td>
+                        <td>•−</td>
+                        <td>••−</td>
+                        <td>•••−</td>
+                        <td>••••</td>
+                    </tr>
+                </table>
+                <p>
+                    Определите текст радиограммы. В ответе укажите, сколько букв было в исходной радиограмме.</p>
+            </section>
+            <section>
+                <h1>Решение:</h1>
+                <ul>
+                    <li>Сопоставим последовательно буквы имеющейся шифрованной радиограмме:
+                        <table>
+                            <tr>
+                                <td>−</td>
+                                <td>•−</td>
+                                <td>•−</td>
+                                <td>••−</td>
+                                <td>−</td>
+                                <td>•−</td>
+                                <td>−</td>
+                            </tr>
+                            <tr>
+                                <td>Т</td>
+                                <td>А</td>
+                                <td>А</td>
+                                <td>У</td>
+                                <td>Т</td>
+                                <td>А</td>
+                                <td>Т</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>Кодирование однозначно, в результате получаем радиограмму: ТААУТАТ, в которой <b>7</b> букв.</li>
+                </ul>
+                <p><b>Ответ: </b>7</p>
+            </section>
+            <div class="btn-send">
+                <a href="../practice/2.html"><span>Задание 2: практика &#8594;</span></a>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

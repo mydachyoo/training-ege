@@ -1,0 +1,158 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/left-nav-style.css">
+    <link rel="stylesheet" href="css/example.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+        <!-- Подключени подсветки кода -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+        <!-- Светлая тема -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+    
+        <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../theory.html">Задания - теория</a></li>
+            <li><a href="../practice.html">Задания - практика</a></li>
+            <li><a href="../options.html">Варианты</a></li>
+            <li><a href="../interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Разбор задание №10</h2> 
+            </header>
+            <section>
+                <h1>Задание 10:</h1>
+                <p>Суть данного задания заключается в переводе числа из N системы в систему X.</p>
+                <p>Рассмотрим способы перевода: </p>
+                <h3>Перевод чисел из 10-й системы счисления в двоичную:</h3>
+                <img src="../img/1-4-500x261.png" alt="">
+                <p>Для того, чтобы перевести число 10 из десятичной системы счисления в двоичную, необходимо осуществить последовательное деление на 2, то тех пор пока остаток не будет меньше чем 2.</p>
+                <h3>Перевод чисел из двоичной системы счисления в десятичную:</h3>
+                <img src="../img/1_1.png" alt="" width="70%">
+                <p>Чтобы десятичное число перевести в двоичную систему счисления, необходимо последовательно делить его на два, каждый раз записывая результат в виде целого числа и остатка. Деление нужно продолжать до тех пор, пока не останется число равное единице. Итоговое число получается путём последовательной записи результата последнего деления и остатков всех делений в обратном порядке.</p>
+                <br>
+                <hr>
+                <h3>Перевод чисел из десятичной системы счисления в восьмеричную:</h3>
+                <img src="../img/1_11-3-500x196.png" alt="">
+                <h3>Перевод чисел из восьмеричной сист. сч-я в десятичную:</h3>
+                <img src="../img/1_1-1.png" alt="" width="70%">
+                <h3>Перевод чисел из 8-й сист. сч-я в 2-ую и обратно триадами:</h3>
+                <img src="../img/1-5-500x117.png" alt="">
+                <br>
+                <hr>
+                <h3>Перевод чисел из десятичной системы счисления в шестнадцатеричную:</h3>
+                <img src="../img/1-6-500x191.png" alt="">
+                <h3>Перевод из шестнадцатеричной системы счисления в десятичную:</h3>
+                <img src="../img/1_11-4-500x131.png" alt="">
+                <h3>Перевод чисел из двоичной сист. сч-я в шестнадцатеричную и обратно тетрадами:</h3>
+                <img src="../img/2-1-500x98.png" alt="">
+            </section>
+            <br>
+            <hr>
+            <section>
+                <h1>Первая задача: </h1>
+                <p>Среди приведённых ниже трёх чисел, записанных в различных системах счисления, найдите максимальное и запишите его в ответе в десятичной системе счисления. В ответе запишите только число, основание системы счисления указывать не нужно.</p>
+                <div class="solution">23<sub>16</sub>, 32<sub>8</sub>, 11110<sub>2</sub></div>
+            </section>
+            <br>
+            <hr>
+            <section>       
+                <h1>Решение: </h1>         
+                <ul>
+                    <li>Последовательно переведем все данные числа в 10-ю систему счисления:
+                        <div class="solution">
+<p><sup>10</sup></p>
+<p>23 = 2*16<sup>1</sup> + 3*16<sup>0</sup> = 35</p>
+                        </div>
+                    </li>
+                    <li>Первое число = 35:
+                        <div class="solution">
+<p><sup>10</sup></p>
+<p>32 = 3*8<sup>1</sup> + 2*8<sup>0</sup> = 26</p>
+                        </div>
+                    </li>
+                    <li>Второе число = 26:
+                        <div class="solution">
+11110 = 1*2<sup>4</sup> + 1*2<sup>3</sup>  + 1*2<sup>2</sup>  + 1*2<sup>1</sup> + 0 = 30
+                        </div>
+                    </li>
+                    <li>Треть число = 30. Наибольшее число — <b style="color: red">35</b></li>
+                </ul>
+            </section>
+            <p><b>Ответ: </b>35</p>
+            <br>
+            <hr>
+            <section>
+                <h1>Альтернативное решение</h1>
+                <ul>
+                    <li>Можно использовать Python для решения данной проблемы:
+                            <pre>
+                                <code>
+def f(x, i):
+    x = int(str(x), i)
+    return x
+print(max(f(23, 16), f(32, 8), f(11110, 2)))
+                                </code>
+                            </pre>
+                    </li>
+                </ul>
+            </section>
+            <p><b>Ответ: </b>35</p>
+            <div class="btn-send">
+                <a href="../practice/10.html"><span>Задание 10: практика &#8594;</span></a>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>
