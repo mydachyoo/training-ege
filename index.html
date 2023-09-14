@@ -1,0 +1,88 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/left-nav-style.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="theory.html">Задания - теория</a></li>
+            <li><a href="practice.html">Задания - практика</a></li>
+            <li><a href="options.html">Варианты</a></li>
+            <li><a href="interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Задания: Теория и Практика</h2> 
+            </header>
+            <section style="padding-top: 60px; font-size: 18px;">
+               <p style="text-align: center;">
+                <p>На этом сайте вы сможете найдите материал к подготовке ОГЭ по информатике, а также порешать задания и полноценные варианты</p>
+                <p>Выбрать нужное задание или вариант, вы сможете воспользовавшись меню в верхнем левом углу</p>
+            </section>
+            <section style="margin-bottom: 200px;">
+                <div class="btn-group">
+                    <a href="theory/1.html"><span>Задание 1: теория</span></a>
+                    <a href="practice/1.html"><span>Задание 1: практика</span></a>
+                    <a href="options/1.html"><span>Вариант 1</span></a>
+                </div>
+            </section>
+            <section style="padding-bottom: 200px;">
+                <video class="interpretor" autoplay loop muted>
+                    <source src="1.mp4" type="video/mp4">
+                  </video>
+                <h1>Интерпретатор Python прямо в браузере!</h1>
+                <h2>Вы можете попробовать использовать Python прямо в браузере, и решать задачи без установки специального ПО.</h2>
+                <div class="btn">
+                    <a href="interpretor.html"><span>Попробовать</span></a>
+                </div>
+            </section>
+        
+        </article>
+    </main>
+</body>
+
+</html>

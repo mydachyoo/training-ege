@@ -1,0 +1,86 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ind-project</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/left-nav-style.css">
+    <link rel="stylesheet" href="css/theory.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 
+    Скрытый checkbox, отвечающий за переключение панели, должен быть в верхней части документа, лучше сразу после тега `<body>`
+
+    `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+
+    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента
+    -->
+    <input type="checkbox" id="nav-toggle" hidden>
+    <!-- 
+    Выдвижную панель размещаете ниже
+    флажка (checkbox), но не обязательно 
+    непосредственно после него, например
+    можно и в конце страницы
+    -->
+    <nav class="nav">
+        <!-- 
+    Метка с именем `id` чекбокса в `for` атрибуте
+    Символ Unicode 'TRIGRAM FOR HEAVEN' (U+2630)
+    Пустой атрибут `onclick` используем для исправления бага в iOS < 6.0
+    См: http://timpietrusky.com/advanced-checkbox-hack 
+    -->
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="theory.html">Задания - теория</a></li>
+            <li><a href="practice.html">Задания - практика</a></li>
+            <li><a href="options.html">Варианты</a></li>
+            <li><a href="interpretor.html">Интерпретатор Python</a></li>
+        </ul>
+    </nav>
+    <main role="main">
+        <article>
+            <header>
+                <h1 class="header__title">Информатика ОГЭ:</h1>
+                <h2>Задания: Практика</h2> 
+            </header>
+        <section>
+            <div class="theory-group">
+                <a href="practice/1.html"><span>1. Количественные параметры информационных объектов</span></a>
+                <a href="practice/2.html"><span>2. Кодирование и декодирование информации</span></a>
+                <a href="practice/3.html"><span>3. Значение логического выражения</span></a>
+                <a href="practice/4.html"><span>4. Формальные описания реальных объектов и процессов</span></a>
+                <a href="practice/5.html"><span>5. Простой линейный алгоритм для формального исполнителя</span></a>
+                <a href="practice/6.html"><span>6. Программа с условным оператором</span></a>
+                <a href="practice/7.html"><span>7. Информационно-коммуникационные технологии</span></a>
+                <a href="practice/8.html"><span>8. Запросы для поисковых систем с использованием логических выражений</span></a>
+                <a href="practice/9.html"><span>9. Анализирование информации, представленной в виде схем</span></a>
+                <a href="practice/10.html"><span>10. Сравнение чисел в различных системах счисления</span></a>
+                <a href="practice/11.html"><span>11. Использование поиска операционной системы и текстового редактора</span></a>
+                <a href="practice/12.html"><span>12. Использование поисковых средств операционной системы</span></a>
+                <hr />
+                <span class="notworktask">Задание с развернутым ответом(проверяются самостоятельно): </span>
+                <a href="practice/13.html"><span>13. Создание презентации или форматирование текста</span></a>
+                <a href="practice/14.html"><span>14. Обработка большого массива данных</span></a>
+                <a href="practice/15.html"><span>15. Короткий алгоритм в различных средах исполнения</span></a>
+                <hr />
+            </div>
+        </section>
+        </article>
+    </main>
+</body>
+</html>
